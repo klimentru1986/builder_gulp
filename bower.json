@@ -1,0 +1,24 @@
+{
+  "name": "template",
+  "authors": [
+    "Kliment Rudnichenko <kliment1986@inbox.ru>"
+  ],
+  "description": "base template with gulp jade sass",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.8"
+  },
+  "group": {
+    "home": ["jquery"]
+  }
+}
