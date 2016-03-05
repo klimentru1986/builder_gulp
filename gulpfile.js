@@ -23,37 +23,25 @@ G.gulp.task('server', pipes.server);
 // Build Dev
 //===========================
 
-G.gulp.task('builddev', ['cleanDev'], function () {
-  G.gulp.start(paths.dev);
+G.gulp.task('build', ['clean'], function () {
+  G.gulp.start('builder');
 });
 
-G.gulp.task('dev', ['jade', 'sass', 'js', 'bowerFiles', 'fonts', 'img', 'extras'],function () {
-	return G.gulp.src(paths.dist)
+G.gulp.task('builder', ['html', 'css', 'js', 'bowerFiles', 'fonts', 'img', 'extras'],function () {
+	return G.gulp.src(paths.dev)
 	.pipe(G.size({title: 'build'}));
 });
 
-//=========================== 
-// Build Dev Directory
-//===========================
-
-G.gulp.task('builddev', ['cleanDev'], function () {
-  G.gulp.start(paths.dev);
-});
-
-G.gulp.task('dev', ['jade', 'sass', 'js', 'bowerFiles', 'fonts', 'img', 'extras'],function () {
-	return G.gulp.src(paths.dist)
-	.pipe(G.size({title: 'build'}));
-});
 
 //===========================
 //Tasks
 //===========================
 
 //Add html
-G.gulp.task('jade', pipes.jade);
+G.gulp.task('html', pipes.jade);
 
 //Add css
-G.gulp.task('sass', pipes.sass);
+G.gulp.task('css', pipes.sass);
 
 //Add js
 G.gulp.task('js', pipes.js);
@@ -68,7 +56,7 @@ G.gulp.task('bowerFiles', pipes.bowerFiles);
 G.gulp.task('img', pipes.img);
 
 //Add Sprites
-G.gulp.task('sprite', pipes.sprites);
+G.gulp.task('sprites', pipes.sprites);
 
 // Add fonts
 G.gulp.task('fonts', pipes.fonts);
@@ -76,8 +64,8 @@ G.gulp.task('fonts', pipes.fonts);
 // Add other to Dist
 G.gulp.task('extras', pipes.extras);
 
-// Clean Dist Directory
-G.gulp.task('cleanDev', pipes.cleanDev);
+// Clean Directory
+G.gulp.task('clean', pipes.clean);
 
 
 

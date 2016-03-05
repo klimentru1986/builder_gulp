@@ -1,14 +1,24 @@
 (function () {
-'use strict';
+	'use strict';
 
-var G = require('../gulpplugins.js');
+	var G = require('../gulpplugins.js');
+	var paths = require('../paths.js');
+	var options = require('../comandline.js');
+	var env = options.env;
 
-var paths = require('../paths.js');
+	var fonts =  function() {
 
-var fonts =  function() {
-  return G.gulp.src(paths.fonts)
-    .pipe(G.filter(['*.eot','*.svg','*.ttf','*.woff','*.woff2']))
-    .pipe(G.gulp.dest(paths.dev + '/fonts'))
+		if(env === 'dev'){
+  			return G.gulp.src(paths.fonts)
+    		.pipe(G.filter(['*.eot','*.svg','*.ttf','*.woff','*.woff2']))
+    		.pipe(G.gulp.dest(paths.dev + '/fonts'))
+    	
+    	}else if(env === 'dist'){ 
+    		return G.gulp.src(paths.fonts)
+    		.pipe(G.filter(['*.eot','*.svg','*.ttf','*.woff','*.woff2']))
+    		.pipe(G.gulp.dest(paths.dist + '/fonts'))
+	    }
+
 };
 
 	module.exports = fonts

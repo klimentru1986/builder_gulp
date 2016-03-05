@@ -21,7 +21,7 @@
 		
 		extras: require('./pipes/extras.pipe.js'),
 
-		cleanDev: require('./pipes/cleanDev.pipe.js'),
+		clean: require('./pipes/clean.pipe.js'),
 
 		server: require('./pipes/server.pipe.js'),
 

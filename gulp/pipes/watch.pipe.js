@@ -11,6 +11,7 @@ var watch =  function(){
 	G.gulp.watch('app/js/**/*.js', ['js']);
 	G.gulp.watch(paths.fonts, ['fonts']);
 	G.gulp.watch(paths.img, ['img']);
+	G.gulp.watch(paths.sprites, ['sprites']);
 	G.gulp.watch(paths.dev + '/**/*').on('change', G.browserSync.reload)
 };
 
