@@ -5,6 +5,7 @@ var paths = {
 	jade: 'app/jade/*.jade',
 	sass: 'app/sass/*.scss',
 	js: 'app/js/*.js',
+	browserify: 'app/js/main.js',
 	php: 'app/php/**/*.php',
 	img: ['app/img/*.jpg', 'app/img/*.png', 'app/img/*.ico', '!app/img/sprites'],
 	sprites: 'app/img/sprites/*.png',

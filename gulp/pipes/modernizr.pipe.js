@@ -1,8 +1,8 @@
 (function () {
 'use strict';
 
-	var G = require('../gulpplugins.js');
-	var paths = require('../paths.js');
+	var G = require('../gulpplugins.js'),
+		paths = require('../paths.js');
 	
 	var modernizr =  function(){
 		gulp.src(paths.js)

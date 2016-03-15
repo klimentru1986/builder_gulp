@@ -1,10 +1,8 @@
 'use strict';
 
-var G = require('./gulp/gulpplugins.js');
-
-var paths = require('./gulp/paths.js');
-
-var pipes = require('./gulp/pipes.js');
+var G = require('./gulp/gulpplugins.js'),
+	paths = require('./gulp/paths.js'),
+	pipes = require('./gulp/pipes.js');
 
 //=========================== 
 //Server

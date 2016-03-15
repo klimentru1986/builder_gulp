@@ -1,23 +1,32 @@
 (function () {
 	'use strict';
 
-	var G = require('../gulpplugins.js');
-	var paths = require('../paths.js');
-	var options = require('../comandline.js');
-	var env = options.env;
+	var G = require('../gulpplugins.js'),
+		paths = require('../paths.js'),
+		bowerPaths = require('../paths.bower.js'),
+		options = require('../comandline.js'),
+		env = options.env;
 
-	var bowerFiles =  function() {
+	var bowerComponents =  function() {
 
 		if(env === 'dev'){
-			return G.gulp.src(G.bowerFiles())
-			.pipe(G.gulp.dest(paths.dev+'/bower'));
+			return G.gulp.src(bowerPaths)
+			.pipe(G.concat('bowerLibs.min.js', {newLine: ';'}))
+			.pipe(G.uglify().on('error', function(e) {
+				console.log(e);
+			}))
+			.pipe(G.gulp.dest(paths.dev+'/js'));
 
 		}else if(env === 'dist'){
-			return G.gulp.src(G.bowerFiles())
-			.pipe(G.gulp.dest(paths.dist+'/bower'));
+			return G.gulp.src(bowerPaths)
+			.pipe(G.concat('bowerLibs.min.js', {newLine: ';'}))
+			.pipe(G.uglify().on('error', function(e) {
+				console.log(e);
+			}))
+			.pipe(G.gulp.dest(paths.dist+'/js'));
 		}
 
 	};
 
-	module.exports = bowerFiles
+	module.exports = bowerComponents
 })()

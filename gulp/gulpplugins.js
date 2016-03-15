@@ -21,6 +21,7 @@
 		gulpif: require('gulp-if'),
 		useref: require('gulp-useref'),
 		sourcemaps: require('gulp-sourcemaps'),
+		concat: require('gulp-concat'),
 		plumber: require('gulp-plumber'),
 		filter: require('gulp-filter'),
 		rimraf: require('gulp-rimraf'),

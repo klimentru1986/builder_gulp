@@ -1,9 +1,8 @@
 (function () {
 'use strict';
 
-var G = require('../gulpplugins.js');
-
-var paths = require('../paths.js');
+var G = require('../gulpplugins.js'),
+	paths = require('../paths.js');
 
 var sprites =  function () {
   return G.gulp.src(paths.sprites)

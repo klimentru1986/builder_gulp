@@ -1,10 +1,10 @@
 (function () {
 	'use strict';
 
-	var G = require('../gulpplugins.js');
-	var paths = require('../paths.js');
-	var options = require('../comandline.js');
-	var env = options.env;
+	var G = require('../gulpplugins.js'),
+		paths = require('../paths.js'),
+		options = require('../comandline.js'),
+		env = options.env;
 
 	var img =  function() {
 	
