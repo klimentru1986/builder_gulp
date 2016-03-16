@@ -18,7 +18,7 @@ G.gulp.task('watch',pipes.watch);
 G.gulp.task('server', pipes.server);
 
 //=========================== 
-// Build Dev
+// Build
 //===========================
 
 G.gulp.task('build', ['clean'], function () {
