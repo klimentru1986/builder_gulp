@@ -7,7 +7,9 @@
 
 		sass: require('./pipes/sass.pipe.js'),
 		
-		bowerFiles: require('./pipes/bowerfiles.pipe.js'),
+		vendorFilesJS: require('./pipes/vendor_files_js.pipe.js'),
+
+		vendorFilesCSS: require('./pipes/vendor_files_css.pipe.js'),
 		
 		img: require('./pipes/img.pipe.js'),
 

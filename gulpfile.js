@@ -25,7 +25,7 @@ G.gulp.task('build', ['clean'], function () {
   G.gulp.start('builder');
 });
 
-G.gulp.task('builder', ['html', 'css', 'js', 'bowerFiles', 'fonts', 'img', 'extras'],function () {
+G.gulp.task('builder', ['html', 'css', 'js', 'vendorFilesCSS', 'vendorFilesJS', 'fonts', 'img', 'extras'],function () {
 	return G.gulp.src(paths.dev)
 	.pipe(G.size({title: 'build'}));
 });
@@ -47,8 +47,11 @@ G.gulp.task('js', pipes.js);
 //Modernizr
 G.gulp.task('modernizr', pipes.modernizr);
 
-//Add bowerFiles
-G.gulp.task('bowerFiles', pipes.bowerFiles);
+//Add vendorFilesJS
+G.gulp.task('vendorFilesJS', pipes.vendorFilesJS);
+
+//Add vendorFilesCSS
+G.gulp.task('vendorFilesCSS', pipes.vendorFilesCSS);
 
 //Add images
 G.gulp.task('img', pipes.img);

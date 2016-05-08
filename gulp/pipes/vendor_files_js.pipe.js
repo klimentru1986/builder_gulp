@@ -3,23 +3,20 @@
 
 	var G = require('../gulpplugins.js'),
 		paths = require('../paths.js'),
-		bowerPaths = require('../paths.bower.js'),
+		vendorPaths = require('../paths.vendor.js'),
 		options = require('../comandline.js'),
 		env = options.env;
 
-	var bowerComponents =  function() {
+	var vendorComponentsJS =  function() {
 
 		if(env === 'dev'){
-			return G.gulp.src(bowerPaths)
-			.pipe(G.concat('bowerLibs.min.js', {newLine: ';'}))
-			.pipe(G.uglify().on('error', function(e) {
-				console.log(e);
-			}))
+			return G.gulp.src(vendorPaths.js)
+			.pipe(G.concat('vendorLibs.js', {newLine: ';'}))
 			.pipe(G.gulp.dest(paths.dev+'/js'));
 
 		}else if(env === 'dist'){
-			return G.gulp.src(bowerPaths)
-			.pipe(G.concat('bowerLibs.min.js', {newLine: ';'}))
+			return G.gulp.src(vendorPaths.js)
+			.pipe(G.concat('vendorLibs.js', {newLine: ';'}))
 			.pipe(G.uglify().on('error', function(e) {
 				console.log(e);
 			}))
@@ -28,5 +25,5 @@
 
 	};
 
-	module.exports = bowerComponents
+	module.exports = vendorComponentsJS
 })()

@@ -23,7 +23,7 @@ $ bower install
 |     |---- gulpplugins.js
 |     |---- pipes.js
 |     |---- paths.js
-|     |---- paths.bower.js
+|     |---- paths.vendor.js
 |     |---- /pipes
 |---- /app
 |     |---- /jade
